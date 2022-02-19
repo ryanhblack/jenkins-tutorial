@@ -1,3 +1,4 @@
+import java.util.Random;
 
 class Calculator {
 
@@ -39,7 +40,22 @@ class Calculator {
     etc
      */
     int fibonacciNumberFinder(int n){
-        return 0;
+        int[] fibonacci_sequence = new int[n + 1];
+
+        for (int i = 0; i <= n; i++) {
+            if (i == 0) {
+                fibonacci_sequence[i] = 0;
+                continue;
+            }
+            if (i == 1) {
+                fibonacci_sequence[i] = 1;
+                continue;
+            }
+
+            fibonacci_sequence[i] = fibonacci_sequence[i - 1] + fibonacci_sequence[i - 2];
+        }
+
+        return fibonacci_sequence[n];
     }
 
 
@@ -51,7 +67,7 @@ class Calculator {
     if int a = 16 then this method returns: 10000
      */
     String intToBinaryNumber(int n){
-        return null;
+        return Integer.toBinaryString(n);
     }
 
     /*
@@ -63,8 +79,20 @@ class Calculator {
     if you run this function twice with the same String input, it must return 2 unique String IDs
      */
     String createUniqueID(String n){
+        StringBuilder string_builder = new StringBuilder(n);
+        string_builder.append('_');
 
-        return null;
+        Random rand = new Random();
+        int unique_id_length = rand.nextInt(10) + 5;
+
+        for (int i = 0; i < unique_id_length; i++) {
+            int alpha_numeric = rand.nextInt(62) + 48;
+            if (alpha_numeric > 57) alpha_numeric += 7;
+            if (alpha_numeric > 90) alpha_numeric += 6;
+            string_builder.append((char) alpha_numeric);
+        }
+
+        return string_builder.toString();
     }
 
 
