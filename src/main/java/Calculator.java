@@ -89,6 +89,7 @@ class Calculator {
             int alpha_numeric = rand.nextInt(62) + 48;
             if (alpha_numeric > 57) alpha_numeric += 7;
             if (alpha_numeric > 90) alpha_numeric += 6;
+
             string_builder.append((char) alpha_numeric);
         }
 
