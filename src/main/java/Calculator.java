@@ -93,7 +93,6 @@ class Calculator {
             string_builder.append((char) alpha_numeric);
         }
 
-        // This comment is here so I can push to trigger pipeline.
         return string_builder.toString();
     }
 
