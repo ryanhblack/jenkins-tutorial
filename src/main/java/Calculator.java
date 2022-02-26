@@ -92,7 +92,7 @@ class Calculator {
 
             string_builder.append((char) alpha_numeric);
         }
-
+        // Add another comment.
         return string_builder.toString();
     }
 
